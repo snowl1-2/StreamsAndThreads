@@ -47,6 +47,7 @@ public class Server {
             // While this boolean flag isn't triggered, play the game with the client
             while (!rightGuess) {
                 clientMessage = reader.readLine();
+
                 if (clientMessage == null) {
                     continue;
                 }
@@ -59,10 +60,11 @@ public class Server {
                     rightGuess = true;
                 }
 
-                if (Integer.parseInt(clientMessage) < -1 ||
-                    Integer.parseInt(clientMessage) > 21) {
+                if (Integer.parseInt(clientMessage) <= -1 ||
+                    Integer.parseInt(clientMessage) >= 21) {
                     serverMessage = "Out of bounds! Guess again: ";
                     writer.println(serverMessage);
+                    continue;
                 }
 
                 if (Integer.parseInt(clientMessage) > num) {

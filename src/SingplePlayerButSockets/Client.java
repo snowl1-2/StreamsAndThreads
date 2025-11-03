@@ -41,9 +41,10 @@ public class Client {
                 System.out.println(serverMessage);
 
                 if (serverMessage.equals(servMP[0]) ||
-                        serverMessage.equals(servMP[1]) ||
-                        serverMessage.equals(servMP[2]) ||
-                        serverMessage.equals(servMP[3])) {
+                 serverMessage.equals(servMP[1]) ||
+                 serverMessage.equals(servMP[2]) ||
+                 serverMessage.equals(servMP[3]))
+                {
                     clientMessage = in.nextLine();
                     writer.println(clientMessage);
                 }
